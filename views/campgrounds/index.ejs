@@ -1,0 +1,32 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <header class="jumbotron">
+        <h1>Welcome to yelpcamp</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus molestiae earum officiis voluptatem unde, reprehenderit hic quo perspiciatis deserunt veniam? Recusandae deleniti nulla consectetur temporibus quibusdam minima hic porro doloremque.</p>
+        <a class="btn btn-lg btn-primary" href="/campgrounds/new">add a new campground</a>
+    </header>
+    
+    <div class="row text-centre" style="display: flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campgrounds){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= campgrounds.image %>">
+                    <div class="caption">
+                        <h4><%= campgrounds.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/campgrounds/<%= campgrounds._id%>" class="btn btn-primary">show more</a>
+                    </p>
+                </div>
+        
+            </div>
+        <% }); %>
+    </div>
+    
+    
+   
+</div>
+
+
+<%- include("../partials/footer") %>
